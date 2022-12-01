@@ -1,0 +1,47 @@
+          <Card>
+            <Accordion className="acco" defaultActiveKey="1">
+              <Accordion.Item eventKey="0">
+                <Accordion.Header>
+                  <Card.Header style={{ display: "flex" }}>
+                    <span
+                      style={{
+                        color: "black",
+                        textDecoration: "none",
+                        flex: 1,
+                        alignSelf: "center",
+                        cursor: "pointer",
+                        fontSize: 18,
+                      }}
+                    >
+                      {note.title}
+                    </span>
+                    <div>
+                      <Button href={`/note/${note._id}`}>Modifier</Button>
+                      <Button
+                        onClick={() => deleteHandler(note._id)}
+                        variant="danger"
+                        className="mx-2"
+                      >
+                        Supprimer
+                      </Button>
+                    </div>
+                  </Card.Header>
+                </Accordion.Header>
+                <Accordion.Body>
+                  <Card.Body>
+                    <h4>
+                      <Badge variant="success">
+                        Categorie: {note.category}
+                      </Badge>
+                    </h4>
+                    <blockquote className="blockquote mb-0">
+                      <p>{note.content}</p>
+                      <footer className="blockquote-footer">
+                        crée le - Date
+                      </footer>
+                    </blockquote>
+                  </Card.Body>
+                </Accordion.Body>
+              </Accordion.Item>
+            </Accordion>
+          </Card>
